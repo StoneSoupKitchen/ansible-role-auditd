@@ -1,0 +1,15 @@
+galaxy_info:
+  role_name: auditd
+  author: stonesoupkitchen
+  description: Auditd installation and management on Linux.
+  license: BSD-3-Clause
+  min_ansible_version: 2.9
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+  galaxy_tags:
+    - audit
+    - auditing
+    - auditd
+dependencies: []

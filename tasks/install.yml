@@ -1,0 +1,12 @@
+# Install the auditd package.
+---
+- name: Define auditd_package
+  set_fact:
+    auditd_package: "{{ __auditd_package }}"
+  when: auditd_package is not defined
+
+- name: Install auditd
+  apt:
+    name: "{{ auditd_package }}"
+    state: "{{ auditd_package_state }}"
+
