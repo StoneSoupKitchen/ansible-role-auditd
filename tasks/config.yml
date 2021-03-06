@@ -1,0 +1,9 @@
+---
+- name: Configure /etc/audit/auditd.conf
+  copy:
+    src: auditd.conf
+    dest: /etc/audit/auditd.conf
+    owner: root
+    group: root
+    mode: '0640'
+
