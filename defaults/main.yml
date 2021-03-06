@@ -3,3 +3,4 @@
 # installed, or use `latest` to make sure the package is always at the latest
 # version.
 auditd_package_state: present
+auditd_plugins_package_state: present

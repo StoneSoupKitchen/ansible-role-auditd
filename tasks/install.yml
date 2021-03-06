@@ -5,8 +5,17 @@
     auditd_package: "{{ __auditd_package }}"
   when: auditd_package is not defined
 
+- name: Define auditd_plugins_package
+  set_fact:
+    auditd_plugins_package: "{{ __auditd_plugins_package }}"
+  when: auditd_plugins_package is not defined
+
 - name: Install auditd
   apt:
     name: "{{ auditd_package }}"
     state: "{{ auditd_package_state }}"
 
+- name: Install auditd plugins
+  apt:
+    name: "{{ auditd_plugins_package }}"
+    state: "{{ auditd_plugins_package_state }}"
