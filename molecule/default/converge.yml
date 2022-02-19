@@ -1,0 +1,15 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Set ansible_virtualization_type to docker"
+      set_fact:
+        ansible_virtualization_type: "docker"
+
+    - name: "Sync package repositories"
+      apt:
+        update_cache: true
+
+    - name: "Include stonesoupkitchen.auditd"
+      include_role:
+        name: "stonesoupkitchen.auditd"
