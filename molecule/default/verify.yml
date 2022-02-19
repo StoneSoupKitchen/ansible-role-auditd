@@ -1,0 +1,24 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Collect host package information
+    package_facts:
+      manager: "auto"
+
+  - name: Package auditd should be installed
+    package:
+      name: auditd
+      state: present
+    check_mode: true
+    register: install
+    failed_when: (install is changed) or (install is failed)
+
+  - name: Package audispd-plugins should be installed
+    package:
+      name: audispd-plugins
+      state: present
+    check_mode: true
+    register: install
+    failed_when: (install is changed) or (install is failed)
